@@ -25,7 +25,9 @@
   --transition: 0.3s ease;
 }
 
-.pointer { cursor: pointer;}
+.pointer {
+    cursor: pointer;
+}
 
 *,
 *::before,
