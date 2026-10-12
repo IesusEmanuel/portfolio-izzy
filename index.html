@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Izzy — Find your business missing part</title>
+  <link rel="icon" type="image/x-icon" href="assets/izzy.ico">
+
+  <!-- Fonte: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Fonte: Climate Crisis -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@1979&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <!-- Fundo geral (imagem aplicada uma única vez via CSS: body::before) -->
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="header__logo" id="header-logo" aria-label="Izzy - Home">
+        <img src="assets/izzy.svg" style="width: 90px; height: auto;" alt="Izzy">
+      </a>
+      <a href="#contact" class="btn btn--outline header__cta" id="header-cta">Contact us</a>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-accent">Find your business</span>
+            <span class="hero__title-main">Missing part</span>
+          </h1>
+          <p class="hero__text" id="hero-text">
+            With a journey marked by innovation, quality, and passion for what we do,
+            [brand] stands out in the market for constantly looking for new ideas and
+            solutions that make everyday life easier.
+          </p>
+        </div>
+        <div class="hero__media" id="hero-media">
+          <img src="assets/cube.png" alt="3D cubes illustration" class="hero__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPANIES HELPED (MARQUEE) ================= -->
+    <section class="companies" id="companies">
+      <div class="container">
+        <div class="companies__bar" id="companies-bar">
+          <div class="companies__head">
+            <span class="companies__label" id="companies-label">Companies helped</span>
+            <div class="companies__rating" id="companies-rating">
+              <span class="companies__fiverr">fiverr.</span>
+              <span class="companies__score">4.9</span>
+              <span class="companies__stars" aria-label="5 stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="marquee" id="marquee" aria-label="Companies helped">
+            <div class="marquee__track" id="marquee-track">
+              <!-- Grupo original (o JS duplica automaticamente para loop infinito) -->
+              <ul class="marquee__group" id="marquee-group">
+                <li class="marquee__item"><img src="assets/logos/bbup.svg" alt="BB UP"></li>
+                <li class="marquee__item"><img src="assets/logos/askofi.svg" alt="Askofi"></li>
+                <li class="marquee__item"><img src="assets/logos/astrarius.svg" alt="Astrarius"></li>
+                <li class="marquee__item"><img src="assets/logos/bossa.svg" alt="Bossa"></li>
+                <li class="marquee__item"><img src="assets/logos/dm align.svg" alt="DM Align"></li>
+                <li class="marquee__item"><img src="assets/logos/ev30.svg" alt="EV30"></li>
+                <li class="marquee__item"><img src="assets/logos/lashi.svg" alt="Lashi"></li>
+                <li class="marquee__item"><img src="assets/logos/ra.svg" alt="RA"></li>
+                <li class="marquee__item"><img src="assets/logos/remme.svg" alt="Remme"></li>
+                <li class="marquee__item"><img src="assets/logos/seven seven.svg" alt="Seven Seven"></li>
+                <li class="marquee__item"><img src="assets/logos/the glueless.svg" alt="The Glueless"></li>
+                <li class="marquee__item"><img src="assets/logos/tip.svg" alt="TIP"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title" id="services-title">
+          <span class="section-title__main">Some of</span>
+          <span class="section-title__accent">Our services</span>
+        </h2>
+
+        <ol class="services__list" id="services-list">
+          <li class="service" id="service-branding">
+            <span class="service__number">01</span>
+            <span class="service__divider" aria-hidden="true"></span>
+            <h3 class="service__name">Branding</h3>
+            <p class="service__text">
+              With a journey marked by innovation, quality, and passion for what we do,
+              [brand] stands out in the market for constantly looking for new ideas and
+              solutions that make everyday life easier.
+            </p>
+          </li>
+
+          <li class="service" id="service-social-media">
+            <span class="service__number">02</span>
+            <span class="service__divider" aria-hidden="true"></span>
+            <h3 class="service__name">Social<br>Media</h3>
+            <p class="service__text">
+              With a journey marked by innovation, quality, and passion for what we do,
+              [brand] stands out in the market for constantly looking for new ideas and
+              solutions that make everyday life easier.
+            </p>
+          </li>
+
+          <li class="service" id="service-website-design">
+            <span class="service__number">03</span>
+            <span class="service__divider" aria-hidden="true"></span>
+            <h3 class="service__name">Website<br>Design</h3>
+            <p class="service__text">
+              With a journey marked by innovation, quality, and passion for what we do,
+              [brand] stands out in the market for constantly looking for new ideas and
+              solutions that make everyday life easier.
+            </p>
+          </li>
+
+          <li class="service" id="service-consulting">
+            <span class="service__number">04</span>
+            <span class="service__divider" aria-hidden="true"></span>
+            <h3 class="service__name">Consul<br>ting</h3>
+            <p class="service__text">
+              With a journey marked by innovation, quality, and passion for what we do,
+              [brand] stands out in the market for constantly looking for new ideas and
+              solutions that make everyday life easier.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <h2 class="section-title" id="projects-title">
+          <span class="section-title__main">Some of</span>
+          <span class="section-title__accent">Best projects</span>
+        </h2>
+
+        <div class="projects__slider" id="projects-slider">
+          <!-- Cada .projects__page é uma "página" 2x2. Para mais projetos, duplique a página. -->
+          <div class="projects__track" id="projects-track">
+            <div class="projects__page" id="projects-page-1">
+
+              <article class="project-card" id="project-kilane">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">Kilane</h3>
+                  <span class="project-card__meta">Norway, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">package design</li>
+                  <li class="tag tag--green">Personal Care</li>
+                  <li class="tag tag--blue">Hygiene</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/kilan.png" alt="Kilane project" class="project-card__img">
+                </figure>
+              </article>
+
+              <article class="project-card" id="project-seven-seven">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">Seven Seven</h3>
+                  <span class="project-card__meta">Saudi Arabia, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">social media</li>
+                  <li class="tag tag--green">women's outerwear</li>
+                  <li class="tag tag--purple">fashion</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/77.png" alt="Seven Seven project" class="project-card__img">
+                </figure>
+              </article>
+
+              <article class="project-card" id="project-bbup">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">BBUP</h3>
+                  <span class="project-card__meta">Spain, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">package design</li>
+                  <li class="tag tag--green">footwear</li>
+                  <li class="tag tag--purple">fashion</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/bb.png" alt="BBUP project" class="project-card__img">
+                </figure>
+              </article>
+
+              <article class="project-card" id="project-ev30">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">EV30</h3>
+                  <span class="project-card__meta">Brazil, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">management</li>
+                  <li class="tag tag--mint">B2B services</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/ev.png" alt="EV30 project" class="project-card__img">
+                </figure>
+              </article>
+              
+              <!-- =================== added logos ===================  -->
+               <article class="project-card" id="project-ev30">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">EV30</h3>
+                  <span class="project-card__meta">Brazil, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">management</li>
+                  <li class="tag tag--mint">B2B services</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/ev.png" alt="EV30 project" class="project-card__img">
+                </figure>
+              </article><article class="project-card" id="project-ev30">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">EV30</h3>
+                  <span class="project-card__meta">Brazil, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">management</li>
+                  <li class="tag tag--mint">B2B services</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/ev.png" alt="EV30 project" class="project-card__img">
+                </figure>
+              </article><article class="project-card" id="project-ev30">
+                <header class="project-card__head">
+                  <h3 class="project-card__title">EV30</h3>
+                  <span class="project-card__meta">Brazil, 2025</span>
+                </header>
+                <ul class="project-card__tags">
+                  <li class="tag tag--orange">logo design</li>
+                  <li class="tag tag--orange">branding</li>
+                  <li class="tag tag--orange">management</li>
+                  <li class="tag tag--mint">B2B services</li>
+                </ul>
+                <figure class="project-card__figure">
+                  <img src="assets/projects/ev.png" alt="EV30 project" class="project-card__img">
+                </figure>
+              </article>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="projects__nav" id="projects-nav">
+          <button type="button" class="btn btn--gradient projects__btn" id="projects-prev" aria-label="Previous projects">
+            <i class="fa-solid fa-caret-left"></i> Previous
+          </button>
+          <button type="button" class="btn btn--gradient projects__btn" id="projects-next" aria-label="Next projects">
+            Next <i class="fa-solid fa-caret-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about" id="about">
+      <div class="container about__inner">
+        <div class="about__content" id="about-content">
+          <h2 class="section-title" id="about-title">
+            <span class="section-title__main">About</span>
+            <span class="section-title__accent">Ourselves</span>
+          </h2>
+          <p class="about__text">
+            Izzy was born with a clear purpose: to help companies — whether emerging or
+            already established — discover or rediscover their essence in the market.
+          </p>
+          <p class="about__text">
+            Our main pillar is customer satisfaction, reflected in deliverables that truly
+            add value to the business. In addition, we stand out for our flexibility: we
+            understand that each organization has unique pain points and challenges.
+            Therefore, we accurately diagnose where to act, focusing precisely on what the
+            company needs to improve or the area where it wants to build its identity.
+          </p>
+        </div>
+
+        <ul class="about__stats" id="about-stats">
+          <li class="stat" id="stat-projects">
+            <span class="stat__label">projects</span>
+            <span class="stat__value" data-count="50" data-suffix="+">50+</span>
+          </li>
+          <li class="stat" id="stat-acceptance">
+            <span class="stat__value" data-count="98" data-suffix="%">98%</span>
+            <span class="stat__label">acceptance rate</span>
+          </li>
+          <li class="stat" id="stat-countries">
+            <span class="stat__value" data-count="16" data-suffix="+">16+</span>
+            <span class="stat__label">countries</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__card" id="contact-card">
+
+          <div class="contact__info" id="contact-info">
+            <h2 class="contact__title">Get in<br>touch</h2>
+            <p class="contact__text">
+              Tell me what your current need is, request a quote for your project,
+              schedule a consultation, or simply set up a meeting so we can exchange
+              ideas. It will be a pleasure to chat.
+            </p>
+            <ul class="contact__list" id="contact-list">
+              <li class="contact__item">
+                <i class="fa-regular fa-envelope"></i>
+                <a href="mailto:iesusmanuel05@gmail.com">iesusmanuel05@gmail.com</a>
+              </li>
+              <li class="contact__item">
+                <i class="fa-solid fa-location-dot"></i>
+                <address>2345 Padre Café St,<br>Apt 302 Centro,<br>Guanhães, MG, Brazil</address>
+              </li>
+              <li class="contact__item">
+                <i class="fa-brands fa-x-twitter"></i>
+                <a href="#" target="_blank" rel="noopener">Izzyy2y (@EmanuelIesus) / X</a>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact__form" id="contact-form" novalidate>
+            <fieldset class="form__group" id="form-services">
+              <legend class="form__legend">Service needed</legend>
+              <div class="chips">
+                <input type="checkbox" id="service-opt-branding" name="service" value="branding" class="chip__input">
+                <label for="service-opt-branding" class="chip">branding</label>
+
+                <input type="checkbox" id="service-opt-social" name="service" value="social media" class="chip__input">
+                <label for="service-opt-social" class="chip">social media</label>
+
+                <input type="checkbox" id="service-opt-web" name="service" value="web development" class="chip__input">
+                <label for="service-opt-web" class="chip">web development</label>
+
+                <input type="checkbox" id="service-opt-consulting" name="service" value="consulting" class="chip__input">
+                <label for="service-opt-consulting" class="chip">consulting</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__group" id="form-budget">
+              <legend class="form__legend">Budget</legend>
+              <div class="chips">
+                <input type="radio" id="budget-opt-1" name="budget" value="USD 50" class="chip__input">
+                <label for="budget-opt-1" class="chip">U$D 50</label>
+
+                <input type="radio" id="budget-opt-2" name="budget" value="USD 350" class="chip__input">
+                <label for="budget-opt-2" class="chip">U$D 350</label>
+
+                <input type="radio" id="budget-opt-3" name="budget" value="USD 500" class="chip__input">
+                <label for="budget-opt-3" class="chip">U$D 500</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form__group" id="form-info">
+              <legend class="form__legend">Info</legend>
+              <div class="form__row">
+                <input type="text" id="field-company" name="company" class="input" placeholder="COMPANY NAME">
+                <input type="text" id="field-name" name="name" class="input" placeholder="PERSONAL NAME">
+              </div>
+              <div class="form__row">
+                <input type="email" id="field-email" name="email" class="input" placeholder="EMAIL">
+                <input type="tel" id="field-phone" name="phone" class="input" placeholder="PHONE">
+              </div>
+              <textarea id="field-message" name="message" class="input input--textarea" placeholder="MESSAGE" rows="4"></textarea>
+            </fieldset>
+
+            <button type="submit" class="btn btn--gradient form__submit" id="form-submit">Send</button>
+            <p class="form__feedback" id="form-feedback" role="status" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand" id="footer-brand">
+          <h2 class="footer__title">
+            <span class="footer__title-accent">Find your business</span>
+            <span class="footer__title-main">Missing part</span>
+          </h2>
+          <a href="#contact" class="btn btn--gradient footer__cta" id="footer-cta">I want to find it</a>
+        </div>
+
+        <nav class="footer__nav" id="footer-nav" aria-label="Footer navigation">
+          <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <ul class="footer__social" id="footer-social">
+          <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-behance"></i> Behance</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a></li>
+        </ul>
+        <p class="footer__copy"><i class="fa-regular fa-copyright"></i> 2026 Izzy</p>
+      </div>
+    </div>
+
+    <!-- Botão voltar ao topo: fica no footer, mas é fixo e visível durante toda a rolagem -->
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-caret-up"></i>
+    </button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
