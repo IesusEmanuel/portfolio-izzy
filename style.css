@@ -25,6 +25,8 @@
   --transition: 0.3s ease;
 }
 
+.pointer { cursor: pointer;}
+
 *,
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -54,7 +56,7 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background-image: url('assets/background.png'); /* <- coloque a imagem aqui */
+  background-image: url('assets/background.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -213,7 +215,6 @@ body::before {
 .marquee__track {
   display: flex;
   width: max-content;
-  /* movimento da ESQUERDA para a DIREITA, contínuo */
   animation: marquee-ltr 85s linear infinite;
 }
 .marquee__group {
@@ -441,7 +442,7 @@ body::before {
 .contact__list { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
 .contact__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
   font-size: 0.6rem;
   font-weight: 600;
@@ -453,6 +454,8 @@ body::before {
   flex-shrink: 0;
   display: grid;
   place-items: center;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background: var(--color-primary);
   color: #fff;
