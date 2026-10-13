@@ -432,6 +432,7 @@ body::before {
 .contact__card > * { transform: rotate(1deg); }
 
 .contact__title {
+  font-family: 'Climate Crisis', sans-serif;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 900;
   line-height: 1;
