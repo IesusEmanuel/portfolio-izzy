@@ -117,6 +117,42 @@
       </div>
     </section>
 
+    <!-- ================================================== -->
+<!-- ============ START: PROJECT GALLERY ============== -->
+<!-- ================================================== -->
+<section class="project-gallery" id="project-gallery">
+  <div class="container">
+    <div class="project-gallery__grid" id="project-gallery-grid">
+
+      <!-- Repetition 1 -->
+      <figure class="project-gallery__item project-gallery__item--wide">
+        <img src="assets/img/projects/bbup/01.jpg" alt="BBUP gallery image 1" loading="lazy">
+      </figure>
+      <figure class="project-gallery__item">
+        <img src="assets/img/projects/bbup/02.jpg" alt="BBUP gallery image 2" loading="lazy">
+      </figure>
+      <figure class="project-gallery__item">
+        <img src="assets/img/projects/bbup/03.jpg" alt="BBUP gallery image 3" loading="lazy">
+      </figure>
+
+      <!-- Repetition 2 -->
+      <figure class="project-gallery__item project-gallery__item--wide">
+        <img src="assets/img/projects/bbup/04.jpg" alt="BBUP gallery image 4" loading="lazy">
+      </figure>
+      <figure class="project-gallery__item">
+        <img src="assets/img/projects/bbup/05.jpg" alt="BBUP gallery image 5" loading="lazy">
+      </figure>
+      <figure class="project-gallery__item">
+        <img src="assets/img/projects/bbup/06.jpg" alt="BBUP gallery image 6" loading="lazy">
+      </figure>
+
+    </div>
+  </div>
+</section>
+<!-- ================================================== -->
+<!-- ============= END: PROJECT GALLERY =============== -->
+<!-- ================================================== -->
+
   </main>
 
   <!-- ================= FOOTER (igual ao index.html, links apontam para o index) ================= -->
@@ -274,6 +310,40 @@
 .project-info__tags .tag { transition: var(--transition); }
 .project-info__tags .tag:hover { transform: translateY(-2px); filter: brightness(1.15); }
 
+/* ================================================== */
+/* ============ START: PROJECT GALLERY ============== */
+/* ================================================== */
+.project-gallery { padding-block: 0 120px; }
+
+.project-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.project-gallery__item {
+  aspect-ratio: 5 / 6;            /* small boxes */
+  background: var(--color-surface); /* white placeholder, as in the PDF */
+  overflow: hidden;
+}
+
+.project-gallery__item--wide {
+  grid-column: 1 / -1;            /* spans both columns */
+  aspect-ratio: 16 / 9;
+}
+
+.project-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.project-gallery__item:hover img { transform: scale(1.04); }
+
+/* ================================================== */
+/* ============= END: PROJECT GALLERY =============== */
+/* ================================================== */
+
 /* ---------- 5. Responsivo ---------- */
 @media (max-width: 992px) {
   .project-detail__grid { grid-template-columns: 1fr; gap: 48px; }
@@ -287,6 +357,11 @@
   .project-intro { padding-block: 28px 36px; }
   .project-info__row { grid-template-columns: 1fr; row-gap: 8px; }
   .project-detail { padding-bottom: 80px; }
+
+  .project-gallery { padding-bottom: 80px; }
+  .project-gallery__grid { grid-template-columns: 1fr; }
+  .project-gallery__item,
+  .project-gallery__item--wide { aspect-ratio: 4 / 3; }
 }
 
 </style>
@@ -306,6 +381,13 @@ const PLACEHOLDER_TEXT = [
   'Izzy was born with a clear purpose: to help companies — whether emerging or already established — discover or rediscover their essence in the market.',
   'Our main pillar is customer satisfaction, reflected in deliverables that truly add value to the business. In addition, we stand out for our flexibility: we understand that each organization has unique pain points and challenges. Therefore, we accurately diagnose where to act, focusing precisely on what the company needs to improve or the area where it wants to build its identity.',
 ];
+
+const backToTop = document.getElementById('back-to-top');
+if (backToTop) {
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 
 const PROJECTS = {
   'kilane': {
@@ -348,6 +430,14 @@ const PROJECTS = {
       { label: 'footwear', color: 'dark' },
       { label: 'fashion', color: 'purple' },
     ],
+    gallery: [
+      'assets/img/projects/bbup/01.jpg',
+      'assets/img/projects/bbup/02.jpg',
+      'assets/img/projects/bbup/03.jpg',
+      'assets/img/projects/bbup/04.jpg',
+      'assets/img/projects/bbup/05.jpg',
+      'assets/img/projects/bbup/06.jpg',
+    ],
     about: PLACEHOLDER_TEXT,
     problems: PLACEHOLDER_TEXT,
     packaging: PLACEHOLDER_TEXT,
@@ -366,6 +456,8 @@ const PROJECTS = {
     problems: PLACEHOLDER_TEXT,
     packaging: PLACEHOLDER_TEXT,
   },
+
+
 };
 
 /* ---------- 2. Helpers ---------- */
@@ -414,6 +506,7 @@ function renderProject(project) {
   renderParagraphs('project-about-body', project.about);
   renderParagraphs('project-problems-body', project.problems);
   renderParagraphs('project-packaging-body', project.packaging);
+  renderGallery(project.gallery, project.name);
 }
 
 function initProjectPage() {
