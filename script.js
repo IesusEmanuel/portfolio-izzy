@@ -180,3 +180,21 @@ if (backToTop) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+/* ---------- Cards de projeto -> página de detalhe ---------- */
+document.querySelectorAll('.project-card').forEach((card) => {
+  const slug = card.id.replace('project-', '');
+  const go = () => { window.location.href = `project.html?id=${slug}`; };
+
+  card.setAttribute('role', 'link');
+  card.setAttribute('tabindex', '0');
+  card.style.cursor = 'pointer';
+
+  card.addEventListener('click', go);
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      go();
+    }
+  });
+});

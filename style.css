@@ -25,9 +25,9 @@
   --transition: 0.3s ease;
 }
 
-.pointer {
-    cursor: pointer;
-}
+.pointer { cursor: pointer; }
+.climate { font-family: 'Climate Crisis', sans-serif; }
+.orange { color: var(--color-primary); }
 
 *,
 *::before,
