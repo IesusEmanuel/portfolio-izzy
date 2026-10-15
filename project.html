@@ -125,8 +125,8 @@
     <div class="project-gallery__grid" id="project-gallery-grid">
 
       <!-- Repetition 1 -->
-      <figure class="project-gallery__item project-gallery__item--wide">
-        <img src="assets/img/projects/bbup/01.jpg" alt="BBUP gallery image 1" loading="lazy">
+      <!-- <figure class="project-gallery__item project-gallery__item--wide">
+        <img src="assets/projects/bbup/4.png" alt="BBUP gallery image 1" loading="lazy">
       </figure>
       <figure class="project-gallery__item">
         <img src="assets/img/projects/bbup/02.jpg" alt="BBUP gallery image 2" loading="lazy">
@@ -135,7 +135,7 @@
         <img src="assets/img/projects/bbup/03.jpg" alt="BBUP gallery image 3" loading="lazy">
       </figure>
 
-      <!-- Repetition 2 -->
+      
       <figure class="project-gallery__item project-gallery__item--wide">
         <img src="assets/img/projects/bbup/04.jpg" alt="BBUP gallery image 4" loading="lazy">
       </figure>
@@ -144,7 +144,7 @@
       </figure>
       <figure class="project-gallery__item">
         <img src="assets/img/projects/bbup/06.jpg" alt="BBUP gallery image 6" loading="lazy">
-      </figure>
+      </figure> -->
 
     </div>
   </div>
@@ -415,6 +415,15 @@ const PROJECTS = {
       { label: "women's outerwear", color: 'green' },
       { label: 'fashion', color: 'purple' },
     ],
+    gallery: [
+      'assets/projects/sevenseven/10.png',
+      'assets/projects/sevenseven/11.png',
+      'assets/projects/sevenseven/12.png',
+      'assets/projects/sevenseven/17.png',
+      'assets/projects/sevenseven/15.png',
+      'assets/projects/sevenseven/13.png',
+      'assets/projects/sevenseven/13.png',
+    ],
     about: PLACEHOLDER_TEXT,
     problems: PLACEHOLDER_TEXT,
     packaging: PLACEHOLDER_TEXT,
@@ -431,14 +440,13 @@ const PROJECTS = {
       { label: 'fashion', color: 'purple' },
     ],
     gallery: [
-      'assets/img/projects/bbup/01.jpg',
-      'assets/img/projects/bbup/02.jpg',
-      'assets/img/projects/bbup/03.jpg',
-      'assets/img/projects/bbup/04.jpg',
-      'assets/img/projects/bbup/05.jpg',
-      'assets/img/projects/bbup/06.jpg',
+      'assets/projects/bbup/4.png',
+      'assets/projects/bbup/5.png',
+      'assets/projects/bbup/6.png',
+      'assets/projects/bbup/8.png',
+      'assets/projects/bbup/7.png',
     ],
-    about: PLACEHOLDER_TEXT,
+    about: ['teste'],
     problems: PLACEHOLDER_TEXT,
     packaging: PLACEHOLDER_TEXT,
   },
@@ -538,6 +546,29 @@ function initProjectPage() {
   }
 
   renderProject(project);
+}
+
+function renderGallery(images, projectName) {
+  const section = document.getElementById('project-gallery');
+  const grid = document.getElementById('project-gallery-grid');
+  if (!section || !grid) return;
+
+  grid.replaceChildren();
+  section.hidden = !(images && images.length);
+
+  (images || []).forEach((src, index) => {
+    const figure = document.createElement('figure');
+    figure.className = 'project-gallery__item';
+    if (index % 3 === 0) figure.classList.add('project-gallery__item--wide');
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `${projectName} gallery image ${index + 1}`;
+    img.loading = 'lazy';
+
+    figure.appendChild(img);
+    grid.appendChild(figure);
+  });
 }
 
 /* ---------- 4. Voltar ao topo ---------- */
