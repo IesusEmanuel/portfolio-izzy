@@ -16,6 +16,7 @@
   --color-tag-blue: #2f7bd6;
   --color-tag-purple: #7a3fd1;
   --color-tag-mint: #7df0d0;
+  --color-tag-red: #e63946;
 
   --container-max: 1200px;
   --container-pad: 24px;
@@ -369,6 +370,7 @@ body::before {
 .tag--blue   { background: var(--color-tag-blue); color: #fff; }
 .tag--purple { background: var(--color-tag-purple); color: #fff; }
 .tag--mint   { background: var(--color-tag-mint); }
+.tag--red    { background: var(--color-tag-red); color: #fff; }
 
 .projects__nav {
   margin-top: 28px;
