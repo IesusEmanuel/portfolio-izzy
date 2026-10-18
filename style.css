@@ -19,6 +19,7 @@
   --color-tag-red: #e63946;
   --color-tag-deepgreen: #1d523c;
   --color-tag-burgundy: #6F0100;
+  --color-tag-cyan: #03353C;
 
   --container-max: 1200px;
   --container-pad: 24px;
@@ -375,6 +376,7 @@ body::before {
 .tag--red    { background: var(--color-tag-red); color: #fff; }
 .tag--deepgreen { background: var(--color-tag-deepgreen); color: #fff; }
 .tag--burgundy { background: var(--color-tag-burgundy); color: #FFFF5F; }
+.tag--cyan { background: var(--color-tag-cyan); color: #CD8047; }
 
 .projects__nav {
   margin-top: 28px;
