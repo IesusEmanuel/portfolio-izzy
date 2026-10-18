@@ -163,7 +163,7 @@ body::before {
   color: var(--color-primary);
   line-height: 4rem;
   letter-spacing: 4px;
-  font-size: clamp(4.2rem, 5vw, 3.4rem);
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
 }
 .hero__title-main {
   font-family: 'Climate Crisis', sans-serif;
@@ -613,7 +613,7 @@ body::before {
 }
 
 @media (max-width: 640px) {
-  :root { --container-pad: 16px; }
+  :root { --container-pad: 36px; }
   .projects__page { grid-template-columns: 1fr; }
   .project-card { flex: 0 0 100%; }
   .form__row { grid-template-columns: 1fr; }
