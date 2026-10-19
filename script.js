@@ -124,13 +124,18 @@ function initContactForm() {
   const feedback = document.getElementById('form-feedback');
   if (!form || !feedback) return;
 
+  const FORM_ENDPOINT = 'https://formspree.io/f/mljgvvkb'; // <- paste your Formspree URL
+  const submitBtn = document.getElementById('form-submit');
+  const msg = (key, fallback) => (window.I18N ? I18N.msg(key) : fallback);
+
   const required = ['field-company', 'field-name', 'field-email', 'field-message']
     .map((id) => document.getElementById(id));
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     feedback.className = 'form__feedback';
 
+    /* ---------- Validation ---------- */
     let valid = true;
     required.forEach((input) => {
       const empty = !input.value.trim();
@@ -141,15 +146,21 @@ function initContactForm() {
     });
 
     if (!valid) {
-      feedback.textContent = 'Please fill in the required fields correctly.';
+      feedback.textContent = msg('formError', 'Please fill in the required fields correctly.');
       feedback.classList.add('is-error');
       return;
     }
 
+    /* ---------- Data ---------- */
     const data = new FormData(form);
+
+    // Anti-spam: bots fill this hidden field, people don't
+    if (data.get('website')) return;
+
     const payload = {
-      services: data.getAll('service'),
-      budget: data.get('budget'),
+      _subject: `New contact from ${data.get('name')} (${data.get('company')})`,
+      services: data.getAll('service').join(', '),
+      budget: data.get('budget') || '',
       company: data.get('company'),
       name: data.get('name'),
       email: data.get('email'),
@@ -157,14 +168,34 @@ function initContactForm() {
       message: data.get('message'),
     };
 
-    // TODO: enviar `payload` para seu backend / serviço de e-mail (fetch, Formspree, EmailJS...)
-    console.log('Form payload:', payload);
+    /* ---------- Sending ---------- */
+    submitBtn.disabled = true;
+    feedback.textContent = msg('formSending', 'Sending...');
 
-    feedback.textContent = 'Thank you! Your message was sent.';
-    feedback.classList.add('is-success');
-    form.reset();
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      feedback.textContent = msg('formSuccess', 'Thank you! Your message was sent.');
+      feedback.classList.add('is-success');
+      form.reset(); // only clears when the message was really sent
+    } catch (error) {
+      feedback.textContent = msg('formFailed', 'Something went wrong. Please try again.');
+      feedback.classList.add('is-error');
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 
+  /* ---------- Remove the red border while typing ---------- */
   form.addEventListener('input', (event) => {
     if (event.target.classList.contains('is-invalid')) {
       event.target.classList.remove('is-invalid');
