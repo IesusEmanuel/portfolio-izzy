@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMarquee();
   initProjectsSlider();
   initCounters();
+  initCalendly();
   initContactForm();
 });
 
@@ -211,6 +212,21 @@ if (backToTop) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+/* ============ START: CALENDLY POPUP ============ */
+function initCalendly() {
+  const button = document.getElementById('schedule-btn');
+  if (!button) return;
+
+  button.addEventListener('click', (event) => {
+    // Se o script do Calendly não carregou, deixa o link abrir normalmente
+    if (!window.Calendly) return;
+
+    event.preventDefault();
+    window.Calendly.initPopupWidget({ url: button.href });
+  });
+}
+/* ============= END: CALENDLY POPUP ============= */
 
 /* ---------- Cards de projeto -> página de detalhe ---------- */
 document.querySelectorAll('.project-card').forEach((card) => {

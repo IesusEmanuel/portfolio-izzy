@@ -453,7 +453,8 @@ body::before {
   letter-spacing: 1px;
 }
 .contact__list { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
-.contact__item {
+.contact__item,
+.contact__link {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -461,6 +462,7 @@ body::before {
   font-weight: 600;
   letter-spacing: 1px;
 }
+
 .contact__item i {
   width: 28px;
   height: 28px;
@@ -475,7 +477,8 @@ body::before {
   font-size: 0.7rem;
 }
 .contact__item a { transition: var(--transition); }
-.contact__item a:hover { color: var(--color-primary); }
+.contact__item a:hover{ color: var(--color-primary); }
+.contact__link a:hover{color: var(--color-text-dark); }
 
 /* Form */
 .form__group { border: none; margin-bottom: 22px; }
