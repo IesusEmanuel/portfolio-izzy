@@ -34,6 +34,20 @@
 .climate { font-family: 'Climate Crisis', sans-serif; }
 .orange { color: var(--color-primary); }
 
+html, body, *, *::before, *::after {
+  cursor: url('assets/cursor.png') 16 16, auto;
+}
+
+a, a *,
+button, button *,
+label,
+.btn, .chip, .back-to-top, .lang-switch__btn,
+.project-card, .project-card *,
+[role="link"], [role="button"],
+input[type="checkbox"], input[type="radio"], input[type="submit"] {
+  cursor: pointer !important;
+}
+
 *,
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
