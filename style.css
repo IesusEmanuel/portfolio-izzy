@@ -629,6 +629,12 @@ body::before {
 }
 
 /* ---------- 15. Responsivo ---------- */
+/* ============ START: INDEX MOBILE FIX ============ */
+
+/* Corta qualquer excesso lateral sem criar rolagem */
+html, body { overflow-x: clip; }
+.main { overflow-x: clip; }
+
 @media (max-width: 992px) {
   .hero__inner,
   .about__inner,
@@ -650,9 +656,42 @@ body::before {
   .marquee__group { gap: 48px; padding-right: 48px; }
   .marquee { --logo-height: 34px; }
   .marquee__item img { height: 34px; }
+  .contact__card { transform: none; }
+  .contact__card > * { transform: none; }
+
+  .hero { padding-block: 6px 3px; }
+
+  .hero__inner { gap: 24px; }
+  .hero__content,
+  .hero__media { min-width: 0; max-width: 100%; }
+
+  /* Imagem menor e centralizada */
+  .hero__media { justify-content: center; }
+  .hero__img {
+    width: 100%;
+    max-width: 240px;      /* diminua para 200px se quiser menor */
+    height: auto;
+  }
+
+  /* Título menor, que acompanha a largura da tela */
+  .hero__title { overflow-wrap: anywhere; }
+  .hero__title-accent { font-size: clamp(1.9rem, 9vw, 3rem); }
+  .hero__title-main   { font-size: clamp(2rem, 8.8vw, 3.7rem); }
+  .footer__title-accent { font-size: clamp(1.2rem, 4vw, 1.8rem);}
+
+  /* Texto de apoio */
+  .hero__text {
+    max-width: 100%;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    overflow-wrap: anywhere;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee__track { animation-duration: 80s; }
 }
+
